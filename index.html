@@ -14,23 +14,32 @@
     <body>
 
         <h1>My Assignment-OTPless </h1>
+        <div id="signinuser"></div>
        
         <div id="otpless-login-page">
-             
-        </div>
-
-
-            <script type="text/javascript"> 
-                function otpless(otplessUser) {
-                console.log(JSON.stringify(otplessUser),"your generated");
-                };
-            </script>
             <script type="text/javascript" src="https://otpless.com/auth.js"
-            cid="ZLH2TY0PRS2CAPY0GRC0I88NRIET3IR6"
+            
             ></script>
         
+
+
+            <script type="text/javascript">
+                const suser = document.getElementById("signinuser")
+                function otpless(otplessUser) {
+                console.log(JSON.stringify(otplessUser));
+                const user = JSON.stringify(otplessUser);
+              sessionStorage.setItem("user",user);
+              alert("SignIn Successfully");
+              
+
+              window.location.href="./page.html"; 
+            };
+            </script>
+           
         
+        <!-- cid="ZLH2TY0PRS2CAPY0GRC0I88NRIET3IR6" -->
         <!-- Load external JavaScript -->
+
         <script src="scripts.js"></script>
         
     </body>
